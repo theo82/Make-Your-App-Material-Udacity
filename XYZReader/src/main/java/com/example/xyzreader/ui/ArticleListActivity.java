@@ -62,10 +62,9 @@ public class ArticleListActivity extends ActionBarActivity implements
 
         mToolbar = (Toolbar)findViewById(R.id.toolbar);
 
-
         mSwipeRefreshLayout =  (SwipeRefreshLayout)findViewById(R.id.swipe_refresh_layout);
 
-        mCoordinatorLayout =  (CoordinatorLayout)findViewById(R.id.coordinatorlayout);
+        //mCoordinatorLayout =  (CoordinatorLayout)findViewById(R.id.coordinatorlayout);
 
         mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
@@ -73,6 +72,12 @@ public class ArticleListActivity extends ActionBarActivity implements
         if (savedInstanceState == null) {
             refresh();
         }
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                updateRefreshingUI();
+            }
+        });
     }
 
     private void refresh() {
