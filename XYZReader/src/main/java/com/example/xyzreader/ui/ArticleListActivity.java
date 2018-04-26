@@ -46,6 +46,7 @@ public class ArticleListActivity extends ActionBarActivity implements
     private Toolbar mToolbar;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private RecyclerView mRecyclerView;
+    private CoordinatorLayout mCoordinatorLayout;
 
     private SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.sss");
     // Use default locale format
@@ -53,17 +54,20 @@ public class ArticleListActivity extends ActionBarActivity implements
     // Most time functions can only handle 1902 - 2037
     private GregorianCalendar START_OF_EPOCH = new GregorianCalendar(2,1,1);
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_article_list);
 
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-
-        mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);
+        mToolbar = (Toolbar)findViewById(R.id.toolbar);
 
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mSwipeRefreshLayout =  (SwipeRefreshLayout)findViewById(R.id.swipe_refresh_layout);
+
+        mCoordinatorLayout =  (CoordinatorLayout)findViewById(R.id.coordinatorlayout);
+
+        mRecyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         getLoaderManager().initLoader(0, null, this);
 
         if (savedInstanceState == null) {
