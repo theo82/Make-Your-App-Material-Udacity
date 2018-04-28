@@ -75,7 +75,6 @@ public class ArticleListActivity extends ActionBarActivity implements
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //updateRefreshingUI();
                 refresh();
             }
         });
