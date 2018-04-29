@@ -11,8 +11,8 @@ Transformed the user experience of a news reading app using Material Design prin
 - Separate an interface into surfaces.
 - Effectively use transitions and motion.
 
-[image 1!]((https://user-images.githubusercontent.com/7755518/39406642-7a35c178-4bc2-11e8-90de-db73fa7da293.png)
+= Srceenshots
 
+https://user-images.githubusercontent.com/7755518/39406642-7a35c178-4bc2-11e8-90de-db73fa7da293.png
 
-
-[image 2!](https://user-images.githubusercontent.com/7755518/39406643-7c3314c6-4bc2-11e8-9b5c-8f3cf9578b13.png)
+https://user-images.githubusercontent.com/7755518/39406643-7c3314c6-4bc2-11e8-9b5c-8f3cf9578b13.png
