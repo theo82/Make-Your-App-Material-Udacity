@@ -1,5 +1,18 @@
-= Make your app Material
+= Make Your App Material
 
 This repository stores the starter code for the XYZ Reader project in Udacity's Android Nanodegree.
 
 Transformed the user experience of a news reading app using Material Design principles. This includes consistent and meaningful use of Material Design UI components, fonts, color, motion and surfaces.
+
+= What Will I Learn
+
+- Understand the fundamentals of Android design.
+- Apply Material Design guidelines to an mobile application.
+- Separate an interface into surfaces.
+- Effectively use transitions and motion.
+
+![screenshot_1525005072](https://user-images.githubusercontent.com/7755518/39406642-7a35c178-4bc2-11e8-90de-db73fa7da293.png)
+
+
+
+![screenshot_1525005084](https://user-images.githubusercontent.com/7755518/39406643-7c3314c6-4bc2-11e8-9b5c-8f3cf9578b13.png)
