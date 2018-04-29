@@ -107,10 +107,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
                 android:layout_marginRight="@dimen/detail_inner_horiz_margin"
+                android:background="?attr/selectableItemBackground"
                 android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier"
                 android:paddingBottom="@dimen/detail_body_bottom_margin"
+                android:textAlignment="viewStart"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/detail_body_text_size" />
+                android:textColorLink="@color/cardview_light_background"
+                android:textSize="@dimen/detail_body_text_size"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
         </com.example.xyzreader.ui.MaxWidthLinearLayout>
     </android.support.v4.widget.NestedScrollView>

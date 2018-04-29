@@ -16,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.Spanned;
 import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.util.Log;
@@ -138,6 +139,9 @@ public class ArticleDetailFragment extends Fragment implements
 
         mStatusBarColorDrawable = new ColorDrawable(0);
 
+
+
+
         mRootView.findViewById(R.id.share_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -191,7 +195,11 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bodyView = (TextView)mRootView.findViewById(R.id.article_body);
 
 
+
+
+
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Roboto-Regular.ttf"));
+
 
         if (mCursor != null) {
             mRootView.setAlpha(0);
@@ -217,7 +225,26 @@ public class ArticleDetailFragment extends Fragment implements
                                 + "</font>"));
 
             }
-            bodyView.setText(Html.fromHtml(mCursor.getString(ArticleLoader.Query.BODY).replaceAll("(\r\n|\n)", "<br />")));
+            String b=mCursor.getString(ArticleLoader.Query.BODY);
+            String a = b.replaceAll(">", "&gt;");
+            String a1=a.replaceAll("(\r\n){2}(?!(&gt;))", "<br><br>");
+            String a2=a1.replaceAll("(\r\n)"," ");
+
+            //remove all text between [ and ]
+            String a3=a2.replaceAll("\\[.*?\\]","");
+
+            //put new line after i.e 1. Ebooks aren't marketing.
+            String a4=a3.replaceAll("(\\d\\.\\s.*?\\.)","$1<br>");
+
+            //make text between * * bold
+            String a5=a4.replaceAll("\\*(.*?)\\*", "<b>$1</b>");
+
+            //remove all '>' from text such as 'are >'  but leave the first '>' in tact
+            String a6=a5.replaceAll("(\\w\\s)&gt;", "$1");
+
+            Spanned a7=Html.fromHtml(a6,Html.FROM_HTML_MODE_LEGACY);
+            bodyView.setText(a7);
+
             ImageLoaderHelper.getInstance(getActivity()).getImageLoader()
                     .get(mCursor.getString(ArticleLoader.Query.PHOTO_URL), new ImageLoader.ImageListener() {
                         @Override
