@@ -8,7 +8,7 @@
     android:layout_marginBottom="4dp"
     android:clickable="true"
     android:focusable="true"
-    app:cardBackgroundColor="@color/card_view_color"
+    android:transitionName="@string/transition"
     android:foreground="?selectableItemBackground">
 
     <LinearLayout
@@ -20,8 +20,10 @@
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/photo_placeholder" />
+            android:layout_height="match_parent"
+            android:cropToPadding="false"
+            android:elevation="4dp"
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/article_title"
@@ -32,10 +34,9 @@
             android:paddingTop="16dp"
             android:paddingRight="16dp"
             android:paddingBottom="4dp"
-            android:textColor="@color/text_color"
+            android:textColor="@color/ltgray"
             android:ellipsize="end"
             android:maxLines="4" />
-
 
         <TextView
             android:id="@+id/article_subtitle"

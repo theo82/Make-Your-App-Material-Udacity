@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:fitsSystemWindows="true"
-        android:background="@color/theme_primary"
-        android:theme="@style/Theme.Bacon">
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar"
