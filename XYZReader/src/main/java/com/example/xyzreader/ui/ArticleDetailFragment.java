@@ -134,7 +134,7 @@ public class ArticleDetailFragment extends Fragment implements
 
         //mScrollView = (NestedScrollView)mRootView.findViewById(R.id.scrollview);
 
-        mPhotoContainerView = (View)mRootView.findViewById(R.id.photo_container);
+        mPhotoContainerView = (View)mRootView.findViewById(R.id.CoordinatorLayout);
         mPhotoViewBig = (ImageView)mRootView.findViewById(R.id.photo_big);
 
         mStatusBarColorDrawable = new ColorDrawable(0);
@@ -193,9 +193,6 @@ public class ArticleDetailFragment extends Fragment implements
         TextView bylineView = (TextView)mRootView.findViewById(R.id.article_byline);
         bylineView.setMovementMethod(new LinkMovementMethod());
         TextView bodyView = (TextView)mRootView.findViewById(R.id.article_body);
-
-
-
 
 
         bodyView.setTypeface(Typeface.createFromAsset(getResources().getAssets(), "Roboto-Regular.ttf"));
